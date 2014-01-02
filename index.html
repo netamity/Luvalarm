@@ -24,19 +24,12 @@
         //
         var my_media = null;
         var mediaTimer = null;
-		
-function getPhoneGapPath() {
 
-    var path = window.location.pathname;
-    path = path.substr( path, path.length - 10 );
-    return 'file://' + path;
-
-};
         // Play audio
         //
         function playAudio(src) {
             // Create Media object from src
-            my_media = new Media( getPhoneGapPath() + src, onSuccess, onError);
+            my_media = new Media( src, onSuccess, onError);
 
             // Play audio
             my_media.play();
@@ -132,7 +125,7 @@ Alarm screen here
 		
 	</div>
 	<div data-role="content">	
-<a href="#" class="btn large" onclick="playAudio('media/la_audio/lucy/AO3.mp3');">Play Audio</a>
+<a href="#" class="btn large" onclick="playAudio('/android_asset/www/media/la_audio/lucy/AO3.mp3');">Play Audio</a>
 		<fieldset data-role="controlgroup" data-type="horizontal" style="text-align:center">   	
 		<div class="ui-checkbox">
         	<input type="checkbox" name="mon" id="mon" class="custom">
