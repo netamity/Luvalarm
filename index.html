@@ -20,22 +20,23 @@
         //
         document.addEventListener("deviceready", onDeviceReady, false);
 
-        // device APIs are available
-        //
-        function onDeviceReady() {
-            playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
-        }
-
         // Audio player
         //
         var my_media = null;
         var mediaTimer = null;
+		
+function getPhoneGapPath() {
 
+    var path = window.location.pathname;
+    path = path.substr( path, path.length - 10 );
+    return 'file://' + path;
+
+};
         // Play audio
         //
         function playAudio(src) {
             // Create Media object from src
-            my_media = new Media(src, onSuccess, onError);
+            my_media = new Media( getPhoneGapPath() + src, onSuccess, onError);
 
             // Play audio
             my_media.play();
