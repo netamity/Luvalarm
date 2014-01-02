@@ -14,6 +14,23 @@
 <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
 <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.datebox.min.js"></script>
 <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
+<script type="text/javascript">
+function playAudio(url) {
+    // Play the audio file at url
+    var my_media = new Media(url,
+        // success callback
+        function () {
+            console.log("playAudio():Audio Success");
+        },
+        // error callback
+        function (err) {
+            console.log("playAudio():Audio Error: " + err);
+        }
+    );
+    // Play audio
+    my_media.play();
+}
+</script>
 </head> 
 <body> 
 
@@ -43,6 +60,7 @@ Alarm screen here
 <div data-role="page" id="setalarm" data-add-back-btn="true">
 	<div data-role="header">
 		<h1>Set alarm</h1>
+		<a href="#" class="btn large" onclick="playAudio('media/la_audio/lucy/AO3.mp3');">Play Audio</a>
 	</div>
 	<div data-role="content">	
 
