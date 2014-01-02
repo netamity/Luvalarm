@@ -16,13 +16,15 @@
     <author href="http://www.netamity.com" email="support@netamity.com">
         Andy Hickey 
     </author>
-	
+
 
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/file"/>
     <feature name="http://api.phonegap.com/1.0/media"/>
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
+	
+<gap:plugin name="org.apache.cordova.audiohandler" />	
 
 	<gap:platform name="android" />
 </widget>
